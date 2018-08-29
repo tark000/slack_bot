@@ -47,4 +47,15 @@ router.post('/slack/actions', async (req, res) => {
   }
 });
 
+router.get('/test', async (req, res) => {
+  try {
+
+    let response = {test: 1, test2: 2};
+    return res.json(response);
+  } catch (err) {
+    log.error(err);
+    return res.status(500).send('Something blew up. We\'re looking into it.');
+  }
+});
+
 export default router;
